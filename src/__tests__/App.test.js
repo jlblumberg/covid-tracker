@@ -1,6 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import App from '../App'
+// import axios from 'axios';
+// import { fetchData } from '../api/index';
+// jest.mock('axios');
 
 describe('App', () => {
 
@@ -11,8 +14,7 @@ describe('App', () => {
 
   it('has children components of Chart, Location, and Stats', () => {
     const wrapper = mount(<App/>);
-    const html = '<div><div>Stats</div><div>Chart</div><div>Location</div></div>'
-    expect(wrapper.childAt(0).html()).toEqual(html)
+    expect(wrapper.childAt(0).text()).toEqual('StatsChartLocation')
   })
 
 });
