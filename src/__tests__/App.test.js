@@ -1,9 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import App from '../App'
-// import axios from 'axios';
-// import { fetchData } from '../api/index';
-// jest.mock('axios');
+import axios from 'axios';
+import { fetchData } from '../api/index';
+import mockResponse from '../__mocks__/mockResponse.json'
+jest.mock('axios');
 
 describe('App', () => {
 
@@ -18,3 +19,14 @@ describe('App', () => {
   })
 
 });
+
+describe('App, using API, ', () => {
+
+  it('Successfully fetches data', async () => {
+    axios.get.mockImplementationOnce(() => Promise.resolve(mockResponse));
+    await expect(fetchData()).resolves.toEqual(mockResponse);
+    await expect(axios.get).toHaveBeenCalledWith('https://covid19.mathdro.id/api');
+  });
+
+});
+
