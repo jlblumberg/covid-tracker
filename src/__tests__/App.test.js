@@ -28,5 +28,11 @@ describe('App, using API, ', () => {
     await expect(axios.get).toHaveBeenCalledWith('https://covid19.mathdro.id/api');
   });
 
+  it('Can handle erroneously fetching data', async () => {
+    axios.get.mockImplementationOnce(() => Promise.reject(new Error('error message')));
+    await expect(fetchData()).rejects.toThrow('error message');
+    await expect(axios.get).toHaveBeenCalledWith('https://covid19.mathdro.id/api');
+  });
+
 });
 
