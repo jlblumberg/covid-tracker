@@ -14,13 +14,12 @@ class App extends Component {
   async componentDidMount() {
     const fetchedData = await fetchData();
     this.setState({ data: fetchedData })
-    console.log(this.state.data)
   }
 
   render() {
     return(
       <div className={styles.container}>
-        <Stats/>
+        <Stats data={this.state.data}/>
         <Chart/>
         <Location/>
       </div>
