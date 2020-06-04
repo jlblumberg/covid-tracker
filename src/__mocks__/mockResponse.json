@@ -1,12 +1,8 @@
 {
   "data": {
-    "hits": [
-      {
-        "objectID": 1
-      },
-      {
-        "objectID": 2
-      }
-    ]
+    "confirmed": 1,
+    "deaths": 2, 
+    "recovered": 3,
+    "lastUpdate": 4
   }
 }

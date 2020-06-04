@@ -22,9 +22,10 @@ describe('App', () => {
 
 describe('App, using API, ', () => {
 
-  it('Successfully fetches data', async () => {
-    axios.get.mockImplementationOnce(() => Promise.resolve(mockResponse));
-    await expect(fetchData()).resolves.toEqual(mockResponse);
+  it('Can handle correctly fetching data', async () => {
+    axios.get.mockResolvedValue(mockResponse);
+    const handledResponse = await fetchData();
+    await expect(handledResponse).toEqual({ confirmed: 1, recovered: 3, deaths: 2, lastUpdate: 4 });
     await expect(axios.get).toHaveBeenCalledWith('https://covid19.mathdro.id/api');
   });
 
