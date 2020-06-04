@@ -7,9 +7,14 @@ import { fetchData } from './api/index'
 
 class App extends Component {
 
+  state = {
+    data: {}
+  }
+
   async componentDidMount() {
-    const data = await fetchData();
-    console.log(data)
+    const fetchedData = await fetchData();
+    this.setState({ data: fetchedData })
+    console.log(this.state.data)
   }
 
   render() {

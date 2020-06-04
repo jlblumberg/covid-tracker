@@ -16,7 +16,13 @@ describe('App', () => {
   it('has children components of Chart, Location, and Stats', () => {
     const wrapper = mount(<App/>);
     expect(wrapper.childAt(0).text()).toEqual('StatsChartLocation')
-  })
+  });
+
+  it('stores data in state', () => {
+    const wrapper = mount(<App/>);
+    expect(wrapper.state().data).toEqual({});
+
+  });
 
 });
 
