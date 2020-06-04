@@ -12,9 +12,8 @@ describe('Stats', () => {
 
   it('inherits data from app', () => {
     const wrapper = shallow(<Stats data={dataMock} />);
-    console.log(wrapper.text());
-    expect(wrapper.text()).toContain('Loading data...')
-    expect(wrapper.find('#stats').exists()).toEqual(true)
+    expect(wrapper.text()).toContain('Loading data...');
+    expect(wrapper.find('#stats').exists()).toEqual(true);
   });
   
 });
