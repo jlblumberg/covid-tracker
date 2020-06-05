@@ -20,20 +20,20 @@ describe('App', () => {
 
 });
 
-describe('App, using API, ', () => {
+describe('App, using fetchData, ', () => {
 
-  it('Can handle correctly fetching data', async () => {
+  it('can handle correctly fetching data', async () => {
     axios.get.mockResolvedValue(mockResponse);
     const handledResponse = await fetchData();
     await expect(handledResponse).toEqual({ confirmed: 1, recovered: 3, deaths: 2, lastUpdate: 4 });
     await expect(axios.get).toHaveBeenCalledWith('https://covid19.mathdro.id/api');
   });
 
-  it('Can handle erroneously fetching data', async () => {
-    axios.get.mockImplementationOnce(() => Promise.reject(new Error('error message')));
-    await expect(fetchData()).rejects.toThrow('error message');
+  it('can handle erroneously fetching data', async () => {
+    axios.get.mockRejectedValue('error message');
+    const rejectedResponse = await fetchData();
+    await expect(rejectedResponse).toEqual(new Error('error message'));
     await expect(axios.get).toHaveBeenCalledWith('https://covid19.mathdro.id/api');
   });
 
 });
-

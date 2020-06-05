@@ -9,7 +9,7 @@ export const fetchData = async () => {
     const selectData = { confirmed, recovered, deaths, lastUpdate }
     return selectData;
   } catch (error) {
-    throw new Error(error);
+    return new Error(error)
   }
 
 }
