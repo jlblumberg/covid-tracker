@@ -9,4 +9,9 @@ describe('Chart', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('contains a line chart', () => {
+    const wrapper = shallow(<Chart/>);
+    expect(wrapper.find('#line-chart').exists()).toEqual(true);
+  });
+
 });
