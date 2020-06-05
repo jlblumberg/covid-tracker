@@ -38,7 +38,7 @@ const Chart = () => {
   );
 
   return(
-    <div className='container' id='line-chart'>
+    <div className={styles.container} id='line-chart'>
       {lineChart}
     </div>
   )
