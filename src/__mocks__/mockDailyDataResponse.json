@@ -1,0 +1,13 @@
+{
+  "data": [
+    {
+      "confirmed": {
+        "total": 10
+      },
+      "deaths": {
+        "total": 10
+      },
+      "reportDate": 10
+    }
+  ]
+}

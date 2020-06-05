@@ -4,6 +4,7 @@ import App from '../App'
 import axios from 'axios';
 import { fetchData, fetchDailyData } from '../api/index';
 import mockResponse from '../__mocks__/mockResponse.json'
+import mockDailyDataResponse from '../__mocks__/mockDailyDataResponse.json'
 jest.mock('axios');
 
 describe('App', () => {
@@ -41,9 +42,9 @@ describe('App, using fetchData, ', () => {
 describe('App, using fetchDailyData, ', () => {
 
   it('can handle correctly fetching data', async () => {
-    axios.get.mockResolvedValue(mockResponse);
+    axios.get.mockResolvedValue(mockDailyDataResponse);
     const handledResponse = await fetchDailyData();
-    await expect(handledResponse).toEqual({ confirmed: 1, recovered: 3, deaths: 2, lastUpdate: 4 });
+    await expect(handledResponse).toEqual([{ "confirmed": 10, "date": 10, "deaths": 10 }]);
     await expect(axios.get).toHaveBeenCalledWith('https://covid19.mathdro.id/api/daily');
   });
 
@@ -51,7 +52,7 @@ describe('App, using fetchDailyData, ', () => {
     axios.get.mockRejectedValue('error message');
     const rejectedResponse = await fetchDailyData();
     await expect(rejectedResponse).toEqual(new Error('error message'));
-    await expect(axios.get).toHaveBeenCalledWith('https://covid19.mathdro.id/api');
+    await expect(axios.get).toHaveBeenCalledWith('https://covid19.mathdro.id/api/daily');
   });
 
 });
