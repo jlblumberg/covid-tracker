@@ -25,6 +25,7 @@ class App extends Component {
   render() {
     return(
       <div className={styles.container}>
+        <img className={styles.image} alt='Covid-19' src='https://i.ibb.co/7QpKsCX/image.png' ></img>
         <Stats data={this.state.data}/>
         <Location handleCountryChange={this.handleCountryChange}/>
         <Chart data={this.state.data} country={this.state.country}/>
