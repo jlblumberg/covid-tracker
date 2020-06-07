@@ -27,7 +27,7 @@ class App extends Component {
       <div className={styles.container}>
         <Stats data={this.state.data}/>
         <Location handleCountryChange={this.handleCountryChange}/>
-        <Chart />
+        <Chart data={this.state.data} country={this.state.country}/>
       </div>
     );
   };

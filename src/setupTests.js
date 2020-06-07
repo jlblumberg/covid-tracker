@@ -6,3 +6,7 @@ configure({ adapter: new Adapter() });
 jest.mock('react-chartjs-2', () => ({
   Line: () => null,
 }))
+
+jest.mock('react-chartjs-2', () => ({
+  Bar: () => null
+}));

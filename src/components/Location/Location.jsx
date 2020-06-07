@@ -16,11 +16,17 @@ const Location = ({ handleCountryChange }) => {
     loadCountries();
   }, [setFetchedCountries]);
 
+  const formatData = () => {
+    if (fetchedCountries.constructor === Array) {
+      return fetchedCountries.map((country, index) => <option key={index} value={country}>{country}</option>)
+    }
+  }
+
   return(
     <FormControl className={styles.formControl} id='location-picker'>
       <NativeSelect defaultValue='' id='location-options' onChange={(e) => handleCountryChange(e.target.value)}>
         <option value='global'>Global</option>
-        {fetchedCountries.map((country, index) => <option key={index} value={country}>{country}</option>)}
+        {formatData()}
       </NativeSelect>
     </FormControl>
   )
