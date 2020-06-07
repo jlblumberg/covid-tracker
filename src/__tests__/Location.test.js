@@ -12,6 +12,7 @@ describe('Location', () => {
   it('has a form to choose the location to plot', () => {
     const wrapper = shallow(<Location/>);
     expect(wrapper.find('#location-picker').exists()).toEqual(true);
+    expect(wrapper.find('#location-options').exists()).toEqual(true);
   });
 
 });

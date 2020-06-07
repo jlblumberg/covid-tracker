@@ -19,8 +19,9 @@ const Location = () => {
 
   return(
     <FormControl className={styles.formControl} id='location-picker'>
-      <NativeSelect>
+      <NativeSelect id='location-options'>
         <option value='global'>Global</option>
+        {fetchedCountries.map((country, index) => <option key={index} value={country}>{country}</option>)}
       </NativeSelect>
     </FormControl>
   )
