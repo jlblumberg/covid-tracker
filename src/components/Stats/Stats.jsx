@@ -8,7 +8,7 @@ const Stats = ({ data: { confirmed, recovered, deaths, lastUpdate }}) => {
   if (!confirmed) {
     return (
       <div id='stats'>
-        "Loading data..."
+        Loading data...
       </div>
     )
   }
