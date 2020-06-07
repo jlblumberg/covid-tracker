@@ -8,7 +8,8 @@ import { fetchData } from './api/index'
 class App extends Component {
 
   state = {
-    data: {}
+    data: {},
+    country: '',
   }
 
   async componentDidMount() {
@@ -16,11 +17,16 @@ class App extends Component {
     this.setState({ data: fetchedData });
   }
 
+  handleCountryChange = async (country) => {
+    const fetchedData = await fetchData(country); 
+    this.setState({ data: fetchedData, country: country });
+  }
+
   render() {
     return(
       <div className={styles.container}>
         <Stats data={this.state.data}/>
-        <Location />
+        <Location handleCountryChange={this.handleCountryChange}/>
         <Chart />
       </div>
     );

@@ -15,9 +15,14 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('stores data in state', () => {
+  it('stores covid data in state', () => {
     const wrapper = mount(<App/>);
-    expect(wrapper.state().data).toEqual({});
+    expect(wrapper.state('data')).toEqual({});
+  });
+
+  it('stores country in state', () => {
+    const wrapper = mount(<App/>);
+    expect(wrapper.state('country')).toEqual('');
   });
 
 });

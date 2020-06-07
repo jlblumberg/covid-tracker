@@ -15,5 +15,10 @@ describe('Location', () => {
     expect(wrapper.find('#location-options').exists()).toEqual(true);
   });
 
+  it('form defaults to Global', () => {
+    const wrapper = shallow(<Location />);
+    expect(wrapper.find('#location-options').text()).toEqual('Global');
+  })
+
 });
 
