@@ -1,0 +1,12 @@
+{
+  "data": {
+    "countries": [
+      {
+        "name": "country1"
+      },
+      {
+        "name": "country2"
+      }
+    ]
+  }
+}
