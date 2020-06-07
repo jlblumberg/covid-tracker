@@ -20,8 +20,8 @@ class App extends Component {
     return(
       <div className={styles.container}>
         <Stats data={this.state.data}/>
-        <Chart/>
-        <Location/>
+        <Location />
+        <Chart />
       </div>
     );
   };
