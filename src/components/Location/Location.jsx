@@ -25,7 +25,7 @@ const Location = ({ handleCountryChange }) => {
   return(
     <FormControl className={styles.formControl} id='location-picker'>
       <NativeSelect defaultValue='' id='location-options' onChange={(e) => handleCountryChange(e.target.value)}>
-        <option value='global'>Global</option>
+        <option value=''>Global</option>
         {formatData()}
       </NativeSelect>
     </FormControl>
