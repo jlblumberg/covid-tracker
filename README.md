@@ -32,7 +32,7 @@ Front-end:
 - JavaScript
 - React (bootstrapped with Create React App)
 - HTML & CSS
-- Materialize UI
+- Material UI
 
 Testing:
 - Jest, Enzyme
