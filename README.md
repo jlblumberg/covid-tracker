@@ -1,3 +1,11 @@
+***
+⚠️⚠️⚠️
+> The public API for Covid-19 mentioned below is no longer maintained, so the site doesn't work. You can still explore the code and see how it used to work below.
+
+⚠️⚠️⚠️
+***
+
+
 ### Covid-19 Tracker
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f4880046-11b5-4b4e-b33b-3951d6e7be0f/deploy-status)](https://app.netlify.com/sites/covid-19-data-viz/deploys)
